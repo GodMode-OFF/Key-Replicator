@@ -3,33 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Cloner Tool</title>
+    <title>Key Cloning Tool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Key Measurement Tool</h1>
-        <p>Upload an image of your key, and use the sliders to match the overlay to your key.</p>
+        <h1>Physical Key Measurement Tool</h1>
+        <p>Select a mode to either place a physical key on the screen or upload an image for measurement.</p>
 
-        <!-- Image Upload -->
-        <input type="file" id="upload" accept="image/*">
+        <!-- Mode Selection -->
+        <div class="mode-selection">
+            <button id="screenModeButton">Screen Mode</button>
+            <button id="imageModeButton">Image Mode</button>
+        </div>
+
+        <!-- Screen Mode Message -->
+        <div id="screenModeInstructions" class="hidden">
+            <p>Place your key on the screen and adjust the measurements to fit.</p>
+        </div>
+
+        <!-- Image Upload for Image Mode -->
+        <input type="file" id="upload" accept="image/*" class="hidden">
         <canvas id="keyCanvas"></canvas>
 
         <!-- Control Panel for Adjustments -->
         <div class="controls">
-            <label>Length:</label>
+            <label>Length: <span id="lengthValue">300</span>px</label>
             <input type="range" id="lengthSlider" min="50" max="500" value="300">
-            
-            <label>Width:</label>
+
+            <label>Width: <span id="widthValue">50</span>px</label>
             <input type="range" id="widthSlider" min="20" max="200" value="50">
 
-            <label>Cut Depth:</label>
+            <label>Cut Depth (Range 1-10): <span id="depthValue">5</span></label>
             <input type="range" id="depthSlider" min="1" max="10" value="5">
+
+            <label>Number of Cuts: <span id="cutsValue">5</span></label>
+            <input type="range" id="cutsSlider" min="1" max="10" value="5">
 
             <button id="exportData">Export Measurements</button>
         </div>
 
-        <p id="disclaimer">Note: Use this tool responsibly and only for keys you own.</p>
+        <p id="disclaimer">Disclaimer: This tool is for lawful and responsible use only.</p>
     </div>
 
     <script src="script.js"></script>
