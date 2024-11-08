@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Cloner Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Key Measurement Tool</h1>
+        <p>Upload an image of your key, and use the sliders to match the overlay to your key.</p>
+
+        <!-- Image Upload -->
+        <input type="file" id="upload" accept="image/*">
+        <canvas id="keyCanvas"></canvas>
+
+        <!-- Control Panel for Adjustments -->
+        <div class="controls">
+            <label>Length:</label>
+            <input type="range" id="lengthSlider" min="50" max="500" value="300">
+            
+            <label>Width:</label>
+            <input type="range" id="widthSlider" min="20" max="200" value="50">
+
+            <label>Cut Depth:</label>
+            <input type="range" id="depthSlider" min="1" max="10" value="5">
+
+            <button id="exportData">Export Measurements</button>
+        </div>
+
+        <p id="disclaimer">Note: Use this tool responsibly and only for keys you own.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
