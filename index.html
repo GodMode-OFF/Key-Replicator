@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Cloning Tool</title>
+    <title>Key Measurement Tool with Custom Cuts</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Physical Key Measurement Tool</h1>
-        <p>Select a mode to either place a physical key on the screen or upload an image for measurement.</p>
+        <h1>Advanced Key Measurement Tool</h1>
+        <p>Select a mode to place a physical key on the screen or upload an image for measurement.</p>
 
         <!-- Mode Selection -->
         <div class="mode-selection">
@@ -26,22 +26,23 @@
         <input type="file" id="upload" accept="image/*" class="hidden">
         <canvas id="keyCanvas"></canvas>
 
-        <!-- Control Panel for Adjustments -->
+        <!-- Control Panel for Base Measurements -->
         <div class="controls">
             <label>Length: <span id="lengthValue">300</span>px</label>
             <input type="range" id="lengthSlider" min="50" max="500" value="300">
 
             <label>Width: <span id="widthValue">50</span>px</label>
             <input type="range" id="widthSlider" min="20" max="200" value="50">
-
-            <label>Cut Depth (Range 1-10): <span id="depthValue">5</span></label>
-            <input type="range" id="depthSlider" min="1" max="10" value="5">
-
-            <label>Number of Cuts: <span id="cutsValue">5</span></label>
-            <input type="range" id="cutsSlider" min="1" max="10" value="5">
-
-            <button id="exportData">Export Measurements</button>
         </div>
+
+        <!-- Cut Controls -->
+        <div id="cutControlsContainer">
+            <h3>Customize Cuts</h3>
+            <button id="addCutButton">Add Cut</button>
+            <div id="cutControls"></div>
+        </div>
+
+        <button id="exportData">Export Measurements</button>
 
         <p id="disclaimer">Disclaimer: This tool is for lawful and responsible use only.</p>
     </div>
