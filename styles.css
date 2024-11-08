@@ -26,8 +26,9 @@ canvas {
     height: auto;
 }
 
-.controls {
+.controls, #cutControlsContainer {
     margin-top: 20px;
+    text-align: left;
 }
 
 label, .mode-selection button {
@@ -51,6 +52,17 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.cut-control {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.cut-control label {
+    display: inline-block;
+    width: 90px;
 }
 
 #disclaimer {
